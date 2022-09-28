@@ -1,0 +1,13 @@
+<h1>Applicant</h1> 
+<h5>check job post</h5>
+<ul>
+  <% @jobs.each do |job| %>
+    <li>
+      <%= link_to job.title, job %>
+    </li>
+  <% end %>
+</ul>
+
+<h1>employer</h1>
+
+<%= link_to "create a job", new_job_path %>
