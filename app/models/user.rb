@@ -5,6 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   enum role: [:employer, :applicant]
+  after_initialize :set_default_role, :if => :new_record?
+
+  private   
+  def set_default_role
+    self.role ||= :employer
+  end
   # def employer?
   #   self.role == "employer"
   # end
