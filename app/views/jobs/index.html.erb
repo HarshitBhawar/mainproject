@@ -1,9 +1,15 @@
+
+<%# employer %>
 <% if current_user.employer? %>
   <h1>Welcome Employer</h1>
-  <%= link_to "create a job", new_job_path %>
+  <%= link_to "create a job", new_job_path %> <br><br>
+  <%= link_to "see jobs posted by you job" %><br><br>
+  <%= link_to "applicant who apllied job post by you" %><br><br>
+  
+<%# applicant %>
 <% else current_user.applicant? %>
   <h1>Welcome applicant</h1>
-  <h5>check job post</h5>
+  <h3>check job post</h3>
 <ul>
   <% @jobs.each do |job| %>
     <li>
@@ -11,4 +17,7 @@
     </li>
   <% end %>
 </ul>
+  <br>
+  <h3><%= link_to "see job applied by u" %></h3>
+
 <% end%>

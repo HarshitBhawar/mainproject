@@ -1,4 +1,14 @@
 <h1>see the job post</h1>
-<p><%= @job.title %></p>
-<p><%= @job.experience %></p>
-<p><%= @job.salary %></p>
+<div>
+
+<h4><p>TITLE      : <%= @job.title %></p></h4>
+<h4><p>EXPERIENCE : <%= @job.experience %></p></h4>
+<h4><p>SALARY     : <%= @job.salary %></p></h4>
+
+<%= button_to "Apply job"%>
+<%= button_to "Cancel"%>
+<br>
+<%= button_to "Back"%>
+ </div>
+   
+ 
